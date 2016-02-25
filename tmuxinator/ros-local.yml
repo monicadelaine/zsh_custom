@@ -12,9 +12,7 @@ root: ~/
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
-update_ros_master
-update_ros_ip
-pre_window: source /opt/ros/indigo/setup.zsh&& export ROS_MASTER_URI=http://<%= ENV["ROS_MASTER_URI"] %> && export ROS_IP=<%= ENV["ROS_IP"] %>
+pre_window: source /opt/ros/indigo/setup.zsh&& export ROS_MASTER_URI=http://localhost:11311 && export ROS_IP=localhost
 
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.

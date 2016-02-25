@@ -53,7 +53,7 @@ plugins=(monica tmux tmuxinator common-aliases dirhistory history grep)
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/scripts"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -85,3 +85,5 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=vi
 source /opt/ros/indigo/setup.zsh
+export ROS_IP=localhost
+export ROS_MASTER_URI=http://localhost:11311

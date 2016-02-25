@@ -25,19 +25,20 @@ cp -Rv ./oh-my-zsh/${INSTALL_PROFILE}.zsh-theme ${OH_MY_ZSH_HOME}/themes/
 cp $HOME/.tmux.conf ./backup/tmux_conf_$dd
 cp ./tmux.conf ${HOME}/.tmux.conf
 tar -cvzf ./backup/tmuxinator_$dd.tar.gz ${HOME}/.tmuxinator
-cp -R ./.tmuxinator ${HOME}/.tmuxinator
+cp -R ./tmuxinator/* ${HOME}/.tmuxinator
 
 
 
 #set editor
 export editor="vi"
 
+tar -czf ./backup/history_$dd.tar.gz $HOME/.zsh_history
 
 #copy scripts
 tar -cvzf ./backup/scripts_$dd.tar.gz ${HOME}/scripts
 cp -R ./scripts/* ${HOME}/scripts/
 
-#copy scripts
+#copy zshrc
 cp $HOME/.zshrc ./backup/zshrc_$dd
 cp -R ./zshrc ${HOME}/.zshrc
 

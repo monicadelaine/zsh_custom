@@ -1,3 +1,8 @@
+# ~/.tmuxinator/rviz-remote.yml
+
+name: rviz-remote
+root: ~/
+
 # ~/.tmuxinator/ros-rviz.yml
 
 name: ros-rviz
@@ -9,12 +14,9 @@ root: ~/
 # Runs before everything. Use it to start daemons etc.
 # pre: sudo /etc/rc.d/mysqld start
 
-
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
-update_ros_master
-update_ros_ip
-pre_window: source /opt/ros/indigo/setup.zsh&& export ROS_MASTER_URI=http://<%= ENV["ROS_MASTER_URI"] %> && export ROS_IP=<%= ENV["ROS_IP"] %>
+pre_window: source /opt/ros/indigo/setup.zsh&& update_ros_ip && export ROS_MASTER_URI=http://<%= @args[0] %>.<%= @args[1] %>:11311
 
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
@@ -37,5 +39,6 @@ windows:
       layout: main-vertical
       panes:
         - roscore
-        - rviz
+        - cd .
 #  - logs: tail -f log/development.log
+
